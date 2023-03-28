@@ -1,0 +1,79 @@
+ABCI:
+  resource_type: rt_F=1
+generic:
+  job_command: python user.py
+  workspace: ./work
+job_setting:
+  cancel_retry: 3
+  cancel_timeout: 60
+  expire_retry: 3
+  expire_timeout: 60
+  finished_retry: 3
+  finished_timeout: 60
+  init_fail_count: 100
+  job_loop_duration: 0.5
+  job_retry: 2
+  job_timeout: 60
+  kill_retry: 3
+  kill_timeout: 60
+  name_length: 6
+  random_scheduling: false
+  result_retry: 1
+  runner_retry: 3
+  runner_timeout: 60
+  running_retry: 3
+  running_timeout: 60
+logger:
+  file:
+    master: master.log
+    optimizer: optimizer.log
+    scheduler: scheduler.log
+  log_level:
+    master: CRITICAL
+    optimizer: CRITICAL
+    scheduler: CRITICAL
+  stream_level:
+    master: CRITICAL
+    optimizer: CRITICAL
+    scheduler: CRITICAL
+optimize:
+  goal: minimize
+  parameters:
+  - initial: -5.0
+    lower: -5.0
+    name: x1
+    type: uniform_float
+    upper: 5.0
+  - initial: -5.0
+    lower: -5.0
+    name: x2
+    type: uniform_float
+    upper: 5.0
+  - initial: -5.0
+    lower: -5.0
+    name: x3
+    type: uniform_float
+    upper: 5.0
+  - initial: -5.0
+    lower: -5.0
+    name: x4
+    type: uniform_float
+    upper: 5.0
+  - initial: -5.0
+    lower: -5.0
+    name: x5
+    type: uniform_float
+    upper: 5.0
+  rand_seed: 42
+  search_algorithm: optimizer.MyOptimizer
+  trial_number: 100
+resource:
+  num_node: 1
+  type: local
+sleep_time:
+  master: 1
+  optimizer: 1
+  scheduler: 1
+verification:
+  condition: []
+  is_verified: false

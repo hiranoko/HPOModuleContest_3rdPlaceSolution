@@ -1,0 +1,8 @@
+{
+  "version": "5.0.2",
+  "flags": {},
+  "study_name": "BoTorch",
+  "n_startup_trials" : 8,
+  "seed": 42,
+  "acqf": "ei"
+}
